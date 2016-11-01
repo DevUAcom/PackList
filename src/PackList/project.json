@@ -1,4 +1,4 @@
-﻿{
+{
   "userSecretsId": "aspnet-PackList-24c74147-3bd6-4d76-86e3-de0c173494eb",
 
   "dependencies": {
@@ -42,7 +42,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
+    },
+    "PackList.Data": "1.0.0-*"
   },
 
   "tools": {

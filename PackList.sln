@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PackList", "src\PackList\PackList.xproj", "{D68013F9-9758-411A-A960-943342BA71F9}"
 EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "PackList.Data", "src\PackList.Data\PackList.Data.xproj", "{B989BA74-EF59-4C99-B386-BEFB4B81E833}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -22,11 +24,16 @@ Global
 		{D68013F9-9758-411A-A960-943342BA71F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D68013F9-9758-411A-A960-943342BA71F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D68013F9-9758-411A-A960-943342BA71F9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B989BA74-EF59-4C99-B386-BEFB4B81E833}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B989BA74-EF59-4C99-B386-BEFB4B81E833}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B989BA74-EF59-4C99-B386-BEFB4B81E833}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B989BA74-EF59-4C99-B386-BEFB4B81E833}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{D68013F9-9758-411A-A960-943342BA71F9} = {3EF0BD0D-727D-4FF3-9F42-DFE205F93140}
+		{B989BA74-EF59-4C99-B386-BEFB4B81E833} = {3EF0BD0D-727D-4FF3-9F42-DFE205F93140}
 	EndGlobalSection
 EndGlobal

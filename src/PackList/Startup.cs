@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using PackList.Data;
+using PackList.Data.Models;
 using PackList.Models;
 using PackList.Services;
 

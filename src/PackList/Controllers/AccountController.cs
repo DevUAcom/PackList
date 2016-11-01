@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
+using PackList.Data.Models;
 using PackList.Models;
 using PackList.Models.AccountViewModels;
 using PackList.Services;
