@@ -5,12 +5,10 @@ using System.Threading.Tasks;
 
 namespace PackList.Data.Models
 {
-    public class Item
+    public class Luggage
     {
-        public int ItemId { get; set; }
+        public int LuggageId { get; set; }
         public string Name { get; set; }
 
-        public int? CategoryId { get; set; }
-        public Category Category { get; set; }
     }
 }

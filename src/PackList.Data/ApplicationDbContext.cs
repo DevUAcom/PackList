@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PackList.Data.EntityTypeConfigurations;
 using PackList.Data.Models;
 
 namespace PackList.Data
@@ -23,13 +24,17 @@ namespace PackList.Data
             // Add your customizations after calling base.OnModelCreating(builder);
 
             // Item
-            builder.Entity<Item>()
-                .Property(i => i.Name)
-                .IsRequired()
-                .HasMaxLength(200);
-        }
+			builder.AddConfiguration(new ItemConfiguration());
 
-        public DbSet<Item> Items { get; set; }
+            // Category
+			builder.AddConfiguration(new CategoryConfiguration());
+
+			// Luggage
+			builder.AddConfiguration(new LuggageConfiguration());
+		}
+
+		public DbSet<Item> Items { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<Luggage> Luggage { get; set; }
     }
 }
