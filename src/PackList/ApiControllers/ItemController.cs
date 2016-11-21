@@ -43,7 +43,7 @@ namespace PackList.ApiControllers
 			}
 			repository.Add(item);
 
-			return CreatedAtRoute("GetItem", new { id = item.ItemId }, item);
+			return new ObjectResult(item);
 		}
 	}
 }
