@@ -1,8 +1,9 @@
 ﻿<div class="well">
-  <form class="form-inline">
-    <div class="form-group">
-      <label>Name</label>
-        <input class="form-control" ng-model="$ctrl.name" />
-    </div>
-  </form>
+    <form class="form-inline">
+        <div class="form-group">
+            <label>Name</label>
+            <input class="form-control" ng-model="$ctrl.name" />
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="$ctrl.onAdd({item: {name: $ctrl.name}})">Add</button>
+    </form>
 </div>

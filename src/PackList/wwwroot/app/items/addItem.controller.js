@@ -6,14 +6,14 @@
         .controller('AddItemController', AddItemController);
 
 	AddItemController.$inject = ['ItemsService'];
-	function AddItemsontroller(ItemsService) {
+	function AddItemController(ItemsService) {
 		var vm = this;
 		
 
 		vm.createItem = createItem;
 
 	  function createItem(item) {
-	    vm.
+	    //vm.
 	  }
 	}
 })();

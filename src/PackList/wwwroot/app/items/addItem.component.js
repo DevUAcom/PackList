@@ -6,7 +6,8 @@
         .component('plAddItem', {
         	templateUrl: 'app/items/addItem.component.template.html',
 			bindings: {
-			  name: '='
+				//name: '=',
+				onAdd: '&'
 			}
       });
 

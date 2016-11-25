@@ -2,11 +2,13 @@
 /// <reference path="../gulpfile.js" />
 /// <reference path="app/app.module.js" />
 /// <reference path="app/constants.js" />
-/// <reference path="app/items/items - copy.component.js" />
-/// <reference path="app/items/items - copy.controller.js" />
+/// <reference path="app/items/additem.component.js" />
+/// <reference path="app/items/addItem.controller.js" />
 /// <reference path="app/items/items.component.js" />
 /// <reference path="app/items/items.controller.js" />
+/// <reference path="app/items/items.controller.spec.js" />
 /// <reference path="app/items/items.service.js" />
+/// <reference path="app/items/items.service.spec.js" />
 /// <reference path="app/luggage/luggage.component.js" />
 /// <reference path="app/luggage/luggage.controller.js" />
 /// <reference path="app/luggage/luggage.service.js" />
@@ -18,3 +20,4 @@
 /// <reference path="lib/jquery/dist/jquery.js" />
 /// <reference path="lib/jquery-validation/dist/jquery.validate.js" />
 /// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
+/// <reference path="test/karma.conf.js" />

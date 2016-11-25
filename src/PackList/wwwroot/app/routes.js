@@ -6,10 +6,10 @@
 
 	RoutesConfig.$inject = ['$stateProvider', '$urlRouterProvider'];
 	function RoutesConfig($stateProvider, $urlRouterProvider) {
-		//$urlRouterProvider.otherwise('/');
+		$urlRouterProvider.otherwise('/');
 
 		$stateProvider
-		  .state('home', { url: '/', template: '<a ui-sref="luggage">luggage</a><a ui-sref="luggage2">luggage2</a>' })
+		  .state('home', { url: '/', template: '<a ui-sref="luggage">luggage</a>' })
 		  // Luggage
 		.state('luggage',
 		  {

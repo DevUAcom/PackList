@@ -20,7 +20,6 @@
 				.catch(getItemsFailed);
 		}
 		function getItemsComplete(response) {
-			console.log(response);
 			return response.data;
 		}
 		function getItemsFailed(error) {
@@ -29,7 +28,7 @@
 
 		// createItem
 		function createItem(item) {
-			$http.post(ApiBase + "/item")
+			return $http.post(ApiBase + "/item", item)
 				.then(createItemComplete)
 				.catch(createItemFailed);
 		}

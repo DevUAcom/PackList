@@ -1,4 +1,5 @@
-﻿<ul>
+﻿<pl-add-item on-add="$ctrl.onAdd({item: item})"></pl-add-item>
+<ul>
     <li ng-repeat="item in $ctrl.itemList">
         {{item.name}}
     </li>

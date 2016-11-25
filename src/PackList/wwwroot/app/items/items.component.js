@@ -6,7 +6,8 @@
         .component('plItems', {
         	templateUrl: 'app/items/items.component.template.html',
 			bindings: {
-			  itemList: '<'
+				itemList: '<',
+				onAdd: '&'
 			}
       });
 
