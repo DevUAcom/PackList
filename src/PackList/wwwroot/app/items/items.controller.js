@@ -20,5 +20,9 @@
 		function addNewItemToList(item) {
 			vm.items.push(item);
 		}
+
+		function clear(parameters) {
+			
+		}
 	}
 })();

@@ -52,8 +52,8 @@
       <script src="~/app/constants.js"></script>
       <script src="~/app/routes.js"></script>
 
-      <script asp-src-include="~/app/luggage/*.js"></script>
-      <script asp-src-include="~/app/items/*.js"></script>
+      <script asp-src-include="~/app/luggage/*.js" asp-src-exclude="~/app/luggage/*.spec.js"></script>
+      <script asp-src-include="~/app/items/*.js" asp-src-exclude="~/app/items/*.spec.js"></script>
 
 
     </environment>

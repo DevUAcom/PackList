@@ -4,6 +4,7 @@
 /// <reference path="app/constants.js" />
 /// <reference path="app/items/additem.component.js" />
 /// <reference path="app/items/addItem.controller.js" />
+/// <reference path="app/items/additem.controller.spec.js" />
 /// <reference path="app/items/items.component.js" />
 /// <reference path="app/items/items.controller.js" />
 /// <reference path="app/items/items.controller.spec.js" />

@@ -5,15 +5,16 @@
         .module('app')
         .controller('AddItemController', AddItemController);
 
-	AddItemController.$inject = ['ItemsService'];
-	function AddItemController(ItemsService) {
+	AddItemController.$inject = [];
+	function AddItemController() {
 		var vm = this;
 		
 
-		vm.createItem = createItem;
+		vm.addItem = addItem;
 
-	  function createItem(item) {
-	    //vm.
+		function addItem(itemName) {
+			vm.onAdd({ item: { name: itemName } });
+			vm.name = '';
 	  }
 	}
 })();
