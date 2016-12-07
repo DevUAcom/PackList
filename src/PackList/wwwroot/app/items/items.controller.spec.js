@@ -1,21 +1,16 @@
 ﻿describe('ItemsController', function () {
-	var $controller;
 	var ItemsController;
 	var newItem = { "Name": "Item1" };
 
-	beforeEach(module('app'));
+	beforeEach(bard.appModule('app'));
 
-	beforeEach(inject(function (_$controller_, ItemsService, $q) {
-		$controller = _$controller_;
-
-		spyOn(ItemsService, 'createItem').and.callFake(function () {
-			var deferred = $q.defer();
-			deferred.resolve(newItem);
-			return deferred.promise;
+	beforeEach(function () { bard.inject(function ($controller, ItemsService, $q) {
+		bard.mockService(ItemsService, {
+			createItem: $q.when(newItem)
 		});
 
 		ItemsController = $controller('ItemsController', { itemsList: [] });
-	}));
+	})});
 
 	it('should create new item', inject(function ($rootScope) {
 		ItemsController.createItem(newItem);

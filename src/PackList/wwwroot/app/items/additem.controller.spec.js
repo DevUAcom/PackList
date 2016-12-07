@@ -1,12 +1,10 @@
 ﻿describe('AddItemController' , function () {
-	var $componentController;
 	var AddItemController;
 
-	beforeEach(module('app'));
-
-	beforeEach(inject(function (_$componentController_) {
-		$componentController = _$componentController_;
-	}));
+	beforeEach(function () {
+		bard.appModule('app');
+		bard.inject('$componentController');
+	});
 
 	it('should call onAdd binding when adding new item', function () {
 		var onAddSpy = jasmine.createSpy('onAdd');
