@@ -43,6 +43,16 @@ namespace PackList.Data.Repositories
 			context.SaveChanges();
 		}
 
+		public void DeleteById<TKey>(TKey id)
+		{
+			var entity = dbSet.Find(id);
+			if (entity != null)
+			{
+				dbSet.Remove(entity);
+				context.SaveChanges();
+			}
+		}
+
 
 
 	}

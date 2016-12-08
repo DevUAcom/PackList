@@ -25,4 +25,14 @@
 
 		$httpBackend.flush();
 	});
+
+	it('should delete item', function () {
+		$httpBackend.expectDELETE(ApiBase + '/item/11').respond(204);
+
+		ItemsService.deleteItem(11).then(function (response) {
+			expect(response.status).toEqual(204);
+		});
+
+		$httpBackend.flush();
+	});
 });

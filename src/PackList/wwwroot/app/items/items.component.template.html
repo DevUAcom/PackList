@@ -1,6 +1,27 @@
-﻿<pl-add-item on-add="$ctrl.onAdd({item: item})"></pl-add-item>
-<ul>
-    <li ng-repeat="item in $ctrl.itemList">
-        {{item.name}}
-    </li>
-</ul>
+﻿<div class="row">
+    <div class="col-md-4">
+        <pl-add-item on-add="$ctrl.onAdd({item: item})"></pl-add-item>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        <table class="table table-bordered table-hover">
+            <tr ng-repeat="item in $ctrl.itemList">
+                <td>{{item.name}}</td>
+                <td class="col-md-1">
+                    <p data-placement="top" data-toggle="tooltip" title="Edit">
+                        <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
+                    </p>
+                </td>
+                <td class="col-md-1">
+                    <p data-placement="top" data-toggle="tooltip" title="Delete">
+                        <button class="btn btn-danger btn-xs" data-title="Delete"
+                                ng-click="$ctrl.onDelete({item: item})">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </button>
+                    </p>
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>

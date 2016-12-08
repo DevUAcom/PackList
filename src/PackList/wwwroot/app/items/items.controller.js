@@ -11,6 +11,7 @@
 		vm.items = itemsList;
 		
 		vm.createItem = createItem;
+		vm.deleteItem = deleteItem;
 
 		function createItem(newItem) {
 			ItemsService.createItem(newItem)
@@ -21,8 +22,15 @@
 			vm.items.push(item);
 		}
 
-		function clear(parameters) {
-			
+		function deleteItem(item) {
+			ItemsService.deleteItem(item.itemId)
+				.then(removeItemFromList(item));
 		}
+
+		function removeItemFromList(item) {
+			var itemIndex = vm.items.indexOf(item);
+			vm.items.splice(itemIndex, 1);
+		}
+
 	}
 })();

@@ -21,6 +21,7 @@ namespace PackList.ApiControllers
 
 		}
 
+		[HttpGet]
 		public IEnumerable<Item> Get() => repository.GetAll();
 
 		[HttpGet("{id}", Name = "GetItem")]
@@ -44,6 +45,13 @@ namespace PackList.ApiControllers
 			repository.Add(item);
 
 			return new ObjectResult(item);
+		}
+
+		[HttpDelete("{id}")]
+		public IActionResult Delete(int id)
+		{
+			repository.DeleteById(id);
+			return new NoContentResult();
 		}
 	}
 }

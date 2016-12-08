@@ -7,7 +7,8 @@
         	templateUrl: 'app/items/items.component.template.html',
 			bindings: {
 				itemList: '<',
-				onAdd: '&'
+				onAdd: '&',
+				onDelete: '&'
 			}
       });
 
