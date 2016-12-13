@@ -1,10 +1,10 @@
 ﻿@{
-  Layout = "";
+    Layout = "";
 }
 <!DOCTYPE html>
 <html ng-app="app">
 <head lang="en">
-  <meta charset="utf-8" />
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Pack List</title>
 
@@ -21,20 +21,23 @@
 </head>
 
 <body>
-<div class="container body-content">
-    <ui-view></ui-view>
-</div>
+    <div class="container body-content">
+        <ui-view></ui-view>
+    </div>
 
     <environment Names="Development">
-      <script src="~/lib/angular/angular.js"></script>
-      <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
+        <script src="~/lib/angular/angular.js"></script>
+        <script src="~/lib/angular-ui-router/release/angular-ui-router.js"></script>
 
-      <script src="~/app/app.module.js"></script>
-      <script src="~/app/constants.js"></script>
-      <script src="~/app/routes.js"></script>
+        <script src="~/app/app.module.js"></script>
+        <script src="~/app/constants.js"></script>
+        <script src="~/app/routes.js"></script>
 
-      <script asp-src-include="~/app/luggage/*.js" asp-src-exclude="~/app/luggage/*.spec.js"></script>
-      <script asp-src-include="~/app/items/*.js" asp-src-exclude="~/app/items/*.spec.js"></script>
+        <script src="~/app/utility/utility.module.js"></script>
+        <script src="~/app/utility/setFocus.js"></script>
+
+        <script asp-src-include="~/app/luggage/*.js" asp-src-exclude="~/app/luggage/*.spec.js"></script>
+        <script asp-src-include="~/app/items/*.js" asp-src-exclude="~/app/items/*.spec.js"></script>
 
 
     </environment>

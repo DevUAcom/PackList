@@ -1,13 +1,10 @@
-﻿// global angular
-(function () {
+﻿(function () {
     'use strict';
 
-    angular.module('app', [
+    angular.module('utility', [
         // Angular modules 
-        'ui.router',
 
         // Custom modules 
-		'utility'
 
         // 3rd Party Modules
         

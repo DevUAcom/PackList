@@ -21,6 +21,7 @@ module.exports = function(config) {
 			'../lib/angular-mocks/angular-mocks.js',
 			'../lib/angular-ui-router/release/angular-ui-router.js',
 			'../lib/bardjs/dist/bard.js',
+			'../app/**/*.module.js',
 			'../app/**/*.js',
 			'**/*.js'
 		],

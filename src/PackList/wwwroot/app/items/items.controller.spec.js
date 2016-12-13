@@ -30,4 +30,11 @@
 		expect(ItemsController.items[1].itemId).toEqual(33);
 	}));
 
+	it('should not delete not existing item', function () {
+		ItemsController.items = [{ itemId: 11, name: "Item1" }, { itemId: 22, name: "Item2" }, { itemId: 33, name: "Item3" }];
+		var itemToDelete = { itemId: -1, name: "Item-1" };
+		ItemsController.deleteItem(itemToDelete);
+		expect(ItemsController.items.length).toEqual(3);
+	});
+
 });

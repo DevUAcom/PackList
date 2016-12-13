@@ -29,7 +29,9 @@
 
 		function removeItemFromList(item) {
 			var itemIndex = vm.items.indexOf(item);
-			vm.items.splice(itemIndex, 1);
+			if(itemIndex !== -1) {
+				vm.items.splice(itemIndex, 1);
+			}
 		}
 
 	}

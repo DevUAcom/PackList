@@ -4,24 +4,39 @@
     </div>
 </div>
 <div class="row">
-    <div class="col-md-4">
-        <table class="table table-bordered table-hover">
-            <tr ng-repeat="item in $ctrl.itemList">
-                <td>{{item.name}}</td>
-                <td class="col-md-1">
-                    <p data-placement="top" data-toggle="tooltip" title="Edit">
-                        <button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit"><span class="glyphicon glyphicon-pencil"></span></button>
-                    </p>
-                </td>
-                <td class="col-md-1">
-                    <p data-placement="top" data-toggle="tooltip" title="Delete">
-                        <button class="btn btn-danger btn-xs" data-title="Delete"
-                                ng-click="$ctrl.onDelete({item: item})">
-                            <span class="glyphicon glyphicon-trash"></span>
+    <div class="col-md-6">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <span class="glyphicon glyphicon-list"></span>All items
+                <div class="pull-right action-buttons">
+                    <div class="btn-group pull-right">
+                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+                            <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
                         </button>
-                    </p>
-                </td>
-            </tr>
-        </table>
+                        <ul class="dropdown-menu slidedown">
+                            <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
+                            <li><a href="#"><span class="glyphicon glyphicon-flag"></span>Flag</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body">
+                <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="item in $ctrl.itemList">
+                        <pl-item item="item" on-delete="$ctrl.onDelete({item: item})"></pl-item>
+                    </li>
+                </ul>
+            </div>
+            <div class="panel-footer">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>
+                            Total Count <span class="label label-info">{{$ctrl.itemList.length}}</span>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

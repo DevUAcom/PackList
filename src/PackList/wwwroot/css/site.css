@@ -48,3 +48,10 @@ textarea {
     display: none
   }
 }
+
+
+/* List Panel */
+.panel-body { padding:0px; }
+.panel-heading .glyphicon { margin-right:5px; }
+.list-group-item:hover, a.list-group-item:focus {text-decoration: none;background-color: rgb(245, 245, 245);}
+.list-group { margin-bottom:0px; }
