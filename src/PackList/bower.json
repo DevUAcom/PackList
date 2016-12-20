@@ -8,6 +8,7 @@
     "jquery-validation-unobtrusive": "3.2.6",
     "angular": "1.5.8",
     "angular-ui-router": "0.3.2",
+    "angular-bootstrap": "2.3.1",
     "angular-mocks": "1.5.8",
     "bardjs": "0.1.8"
   }

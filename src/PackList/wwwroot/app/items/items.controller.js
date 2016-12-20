@@ -5,13 +5,14 @@
         .module('app')
         .controller('ItemsController', ItemsController);
 
-	ItemsController.$inject = ['itemsList', 'ItemsService'];
-	function ItemsController(itemsList, ItemsService) {
+	ItemsController.$inject = ['itemsList', 'ItemsService', '$uibModal', '$log'];
+	function ItemsController(itemsList, ItemsService, $uibModal, $log) {
 		var vm = this;
 		vm.items = itemsList;
 		
 		vm.createItem = createItem;
 		vm.deleteItem = deleteItem;
+		vm.editItem = editItem;
 
 		function createItem(newItem) {
 			ItemsService.createItem(newItem)
@@ -25,6 +26,23 @@
 		function deleteItem(item) {
 			ItemsService.deleteItem(item.itemId)
 				.then(removeItemFromList(item));
+		}
+
+		function editItem(item) {
+			var modalInstance = $uibModal.open({
+				component: 'plEditItem',
+				resolve: {
+					item: function () {
+						return item;
+					}
+				}
+			});
+
+			modalInstance.result.then(function (editedItem) {
+				item.name = editedItem.name;
+			}, function () {
+				$log.info('Modal dismissed at: ' + new Date());
+			});
 		}
 
 		function removeItemFromList(item) {

@@ -11,6 +11,7 @@
 
 		service.getItems = getItems;
 		service.createItem = createItem;
+		service.updateItem = updateItem;
 		service.deleteItem = deleteItem;
 
 
@@ -38,6 +39,19 @@
 		}
 		function createItemFailed(error) {
 			$log.error("XHR Failed for createItem." + error.data);
+		}
+
+		// updateItem
+		function updateItem(item) {
+			return $http.put(ApiBase + "/item", item)
+				.then(updateItemComplete)
+				.catch(updateItemFailed);
+		}
+		function updateItemComplete(response) {
+			return response.data;
+		}
+		function updateItemFailed(error) {
+			$log.error("XHR Failed for updateItem." + error.data);
 		}
 
 		// deleteItem

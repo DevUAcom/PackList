@@ -1,12 +1,12 @@
 ﻿<span ng-if="!$ctrl.editMode">{{ $ctrl.item.name }}</span>
 <span ng-if="$ctrl.editMode">
-    <input set-focus="$ctrl.editMode" ng-model="$ctrl.itemName" /><br/><br />
+    <input ng-model="$ctrl.itemName" /><br/><br />
     <button class="btn btn-primary btn-xs" ng-click="$ctrl.cancelEdit()">
         <span class="glyphicon glyphicon-remove"></span>
     </button>
 </span>
 <div class="pull-right action-buttons">
-    <button class="btn btn-primary btn-xs" ng-click="$ctrl.beginEdit()">
+    <button class="btn btn-primary btn-xs" ng-click="$ctrl.onEdit({ item: $ctrl.item })">
         <span class="glyphicon glyphicon-pencil"></span>
     </button>
     <button class="btn btn-danger btn-xs" ng-click="$ctrl.onDelete({ item: $ctrl.item })">

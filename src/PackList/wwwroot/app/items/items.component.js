@@ -8,6 +8,7 @@
 			bindings: {
 				itemList: '<',
 				onAdd: '&',
+				onEdit: '&',
 				onDelete: '&'
 			}
       });

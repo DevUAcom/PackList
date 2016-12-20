@@ -26,6 +26,16 @@
 		$httpBackend.flush();
 	});
 
+	it('should update item', function () {
+		$httpBackend.expectPUT(ApiBase + '/item', { "id": 1, "Name": "Item1" }).respond({ "id": 1, "Name": "Item1" });
+
+		ItemsService.updateItem({ "id": 1, "Name": "Item1" }).then(function (response) {
+			expect(response).toEqual({ "id": 1, "Name": "Item1" });
+		});
+
+		$httpBackend.flush();
+	});
+
 	it('should delete item', function () {
 		$httpBackend.expectDELETE(ApiBase + '/item/11').respond(204);
 

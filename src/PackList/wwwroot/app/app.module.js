@@ -5,6 +5,7 @@
     angular.module('app', [
         // Angular modules 
         'ui.router',
+		'ui.bootstrap',
 
         // Custom modules 
 		'utility'
