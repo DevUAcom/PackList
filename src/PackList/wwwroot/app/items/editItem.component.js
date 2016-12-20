@@ -5,7 +5,7 @@
 		.module('app')
         .component('plEditItem', {
         	templateUrl: 'app/items/editItem.component.template.html',
-        	controller: 'EditItemController',
+        	controller: 'EditItemComponentController',
         	bindings: {
 				resolve: '<',
 				close: '&',

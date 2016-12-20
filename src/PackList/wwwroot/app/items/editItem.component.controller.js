@@ -3,10 +3,10 @@
 
 	angular
         .module('app')
-        .controller('EditItemController', EditItemController);
+        .controller('EditItemComponentController', EditItemComponentController);
 
-	EditItemController.$inject = [];
-	function EditItemController() {
+	EditItemComponentController.$inject = ['$log'];
+	function EditItemComponentController($log) {
 		var vm = this;
 
 		vm.$onInit = onInit;

@@ -5,7 +5,7 @@
 		.module('app')
         .component('plAddItem', {
         	templateUrl: 'app/items/addItem.component.template.html',
-        	controller: 'AddItemController',
+        	controller: 'AddItemComponentController',
         	bindings: {
 				onAdd: '&'
 			}

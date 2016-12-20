@@ -3,10 +3,10 @@
 
 	angular
         .module('app')
-        .controller('AddItemController', AddItemController);
+        .controller('AddItemComponentController', AddItemComponentController);
 
-	AddItemController.$inject = [];
-	function AddItemController() {
+	AddItemComponentController.$inject = [];
+	function AddItemComponentController() {
 		var vm = this;
 		
 
