@@ -47,6 +47,18 @@ namespace PackList.ApiControllers
 			return new ObjectResult(item);
 		}
 
+		[HttpPut]
+		public IActionResult Update([FromBody] Item item)
+		{
+			if(item == null)
+			{
+				return BadRequest();
+			}
+			repository.Update(item);
+
+			return new ObjectResult(item);
+		}
+
 		[HttpDelete("{id}")]
 		public IActionResult Delete(int id)
 		{
