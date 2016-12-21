@@ -3,40 +3,58 @@
         <pl-add-item on-add="$ctrl.onAdd({item: item})"></pl-add-item>
     </div>
 </div>
+
 <div class="row">
     <div class="col-md-6">
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <span class="glyphicon glyphicon-list"></span>All items
-                <div class="pull-right action-buttons">
-                    <div class="btn-group pull-right">
-                        <button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
-                            <span class="glyphicon glyphicon-cog" style="margin-right: 0px;"></span>
-                        </button>
-                        <ul class="dropdown-menu slidedown">
-                            <li><a href="#"><span class="glyphicon glyphicon-pencil"></span>Edit</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-trash"></span>Delete</a></li>
-                            <li><a href="#"><span class="glyphicon glyphicon-flag"></span>Flag</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="panel-body">
-                <ul class="list-group">
-                    <li class="list-group-item" ng-repeat="item in $ctrl.itemList">
-                        <pl-item item="item" on-edit="$ctrl.onEdit({item: item})" on-delete="$ctrl.onDelete({item: item})"></pl-item>
-                    </li>
-                </ul>
-            </div>
-            <div class="panel-footer">
-                <div class="row">
-                    <div class="col-md-6">
-                        <h6>
-                            Total Count <span class="label label-info">{{$ctrl.itemList.length}}</span>
-                        </h6>
-                    </div>
-                </div>
-            </div>
+        <h4>All Items</h4>
+        <div class="table-responsive">
+
+            <table id="mytable" class="table table-bordred table-striped">
+                <thead>
+                    <tr>
+                        <th>Item Name</th>
+                        <th>Category</th>
+
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr ng-repeat="item in $ctrl.itemList">
+                        <td class="col-xs-5">{{ item.name }}</td>
+                        <td class="col-xs-5"></td>
+                        <td class="col-xs-1">
+                            <p data-placement="top" data-toggle="tooltip" title="Edit">
+                                <button class="btn btn-primary btn-xs" ng-click="$ctrl.onEdit({ item: item })">
+                                    <span class="glyphicon glyphicon-pencil"></span>
+                                </button>
+                            </p>
+                        </td>
+                        <td class="col-xs-1">
+                            <p data-placement="top" data-toggle="tooltip" title="Delete">
+                                <button class="btn btn-danger btn-xs" ng-click="$ctrl.onDelete({ item: item })">
+                                    <span class="glyphicon glyphicon-trash"></span>
+                                </button>
+                            </p>
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+            <div class="clearfix"></div>
+            <!--<ul class="pagination pull-right">
+                <li class="disabled"><a href="#"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+                <li class="active"><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+            </ul>-->
+
         </div>
+
     </div>
 </div>
