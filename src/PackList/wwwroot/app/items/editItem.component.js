@@ -1,4 +1,5 @@
-﻿(function() {
+﻿// Modal Edit Window
+(function () {
     'use strict';
 
 	angular

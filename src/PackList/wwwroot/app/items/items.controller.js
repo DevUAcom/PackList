@@ -13,6 +13,7 @@
 		vm.createItem = createItem;
 		vm.deleteItem = deleteItem;
 		vm.editItem = editItem;
+		//vm.saveItem = saveItem;
 
 		function createItem(newItem) {
 			ItemsService.createItem(newItem)
@@ -40,9 +41,16 @@
 
 			modalInstance.result.then(function (editedItem) {
 				item.name = editedItem.name;
+				item.category = editedItem.category;
+
+				saveItem(item);
 			}, function () {
 				$log.info('Modal dismissed at: ' + new Date());
 			});
+		}
+
+		function saveItem(item) {
+			ItemsService.updateItem(item);
 		}
 
 		function removeItemFromList(item) {
