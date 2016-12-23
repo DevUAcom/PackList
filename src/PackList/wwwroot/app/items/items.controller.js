@@ -5,8 +5,8 @@
         .module('app')
         .controller('ItemsController', ItemsController);
 
-	ItemsController.$inject = ['itemsList', 'ItemsService', 'CategoriesService', '$uibModal', '$log'];
-	function ItemsController(itemsList, ItemsService, CategoriesService, $uibModal, $log) {
+	ItemsController.$inject = ['itemsList', 'ItemsService', '$uibModal', '$log', '$q'];
+	function ItemsController(itemsList, ItemsService, $uibModal, $log, $q) {
 		var vm = this;
 		vm.items = itemsList;
 		
@@ -14,7 +14,6 @@
 		vm.deleteItem = deleteItem;
 		vm.editItem = editItem;
 		//vm.saveItem = saveItem;
-		vm.getCategoryNameById = getCategoryNameById;
 
 		function createItem(newItem) {
 			ItemsService.createItem(newItem)
@@ -61,12 +60,5 @@
 			}
 		}
 
-		function getCategoryNameById(categoryId) {
-			var categories = CategoriesService.getCategories();
-			var category = categories.find(function (category) {
-				return category.categoryId === categoryId;
-			});
-			return category ? category.name : '';
-		}
 	}
 })();

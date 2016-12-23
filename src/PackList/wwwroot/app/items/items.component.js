@@ -5,7 +5,8 @@
 		.module('app')
         .component('plItems', {
         	templateUrl: 'app/items/items.component.template.html',
-			bindings: {
+        	controller: 'ItemsComponentController',
+        	bindings: {
 				itemList: '<',
 				onAdd: '&',
 				onEdit: '&',

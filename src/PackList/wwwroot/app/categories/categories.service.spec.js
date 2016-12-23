@@ -12,7 +12,7 @@
 
 
 	it('should return categories list', function () {
-		$httpBackend.whenGET(ApiBase + '/category').respond(["Category1", "Category2"]);
+		$httpBackend.expectGET(ApiBase + '/category').respond(["Category1", "Category2"]);
 
 		CategoriesService.getCategories().then(function (response) {
 			expect(response).toEqual(["Category1", "Category2"]);

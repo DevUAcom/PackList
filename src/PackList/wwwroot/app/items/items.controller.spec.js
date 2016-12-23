@@ -41,32 +41,4 @@
 		});
 	});
 
-	describe('Category', function () {
-		var ItemsController;
-
-		beforeEach(function () {
-			bard.inject(function ($controller, CategoriesService) {
-				bard.mockService(CategoriesService, {
-					getCategories: [
-						{ categoryId: 1, name: 'category1' },
-						{ categoryId: 2, name: 'category2' },
-						{ categoryId: 3, name: 'category3' }
-					]
-				});
-
-				ItemsController = $controller('ItemsController', { itemsList: [] });
-			});
-		});
-
-		it('should return category name by id', function () {
-			var categoryName = ItemsController.getCategoryNameById(2);
-			expect(categoryName).toEqual('category2');
-		});
-
-		it('should return empty category name by id', function () {
-			var categoryName = ItemsController.getCategoryNameById(22);
-			expect(categoryName).toEqual('');
-		});
-	});
-
 });
