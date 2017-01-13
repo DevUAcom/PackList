@@ -22,12 +22,12 @@ namespace PackList.ApiControllers
 		}
 
 		[HttpGet]
-		public IEnumerable<Category> Get() => repository.GetAll();
+		public async Task<IEnumerable<Category>> Get() => await repository.GetAllAsync();
 
 		[HttpGet("{id}", Name = "GetCategory")]
-		public IActionResult Get(int id)
+		public async Task<IActionResult> Get(int id)
 		{
-			var category = repository.FindById(id);
+			var category = await repository.FindByIdAsync(id);
 			if(category == null)
 			{
 				return NotFound();
@@ -36,33 +36,33 @@ namespace PackList.ApiControllers
 		}
 
 		[HttpPost]
-		public IActionResult Create([FromBody] Category category)
+		public async Task<IActionResult> Create([FromBody] Category category)
 		{
 			if(category == null)
 			{
 				return BadRequest();
 			}
-			repository.Add(category);
+			await repository.AddAsync(category);
 
 			return new ObjectResult(category);
 		}
 
 		[HttpPut]
-		public IActionResult Update([FromBody] Category category)
+		public async Task<IActionResult> Update([FromBody] Category category)
 		{
 			if(category == null)
 			{
 				return BadRequest();
 			}
-			repository.Update(category);
+			await repository.UpdateAsync(category);
 
 			return new ObjectResult(category);
 		}
 
 		[HttpDelete("{id}")]
-		public IActionResult Delete(int id)
+		public async Task<IActionResult> Delete(int id)
 		{
-			repository.DeleteById(id);
+			await repository.DeleteByIdAsync(id);
 			return new NoContentResult();
 		}
 	}

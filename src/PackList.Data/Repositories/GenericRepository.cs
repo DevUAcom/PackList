@@ -16,17 +16,17 @@ namespace PackList.Data.Repositories
 			this.context = context;
 			dbSet = context.Set<TEntity>();
 		}
-		public IEnumerable<TEntity> GetAll()
+		public async Task<IEnumerable<TEntity>> GetAllAsync()
 		{
-			return dbSet.AsNoTracking().ToList();
+			return await dbSet.AsNoTracking().ToListAsync();
 		}
 
-		public IEnumerable<TEntity> GetBy(Expression<Func<TEntity, bool>> predicate)
+		public async Task<IEnumerable<TEntity>> GetBy(Expression<Func<TEntity, bool>> predicate)
 		{
-			return dbSet.AsNoTracking().Where(predicate).ToList();
+			return await dbSet.AsNoTracking().Where(predicate).ToListAsync();
 		}
 
-		public TEntity FindById<TKey>(TKey id)
+		public async Task<TEntity> FindByIdAsync<TKey>(TKey id)
 		{
 			var item = Expression.Parameter(typeof(TEntity), "entity");
 			var prop = Expression.Property(item, typeof(TEntity).Name + "Id");
@@ -34,28 +34,28 @@ namespace PackList.Data.Repositories
 			var equal = Expression.Equal(prop, value);
 			var lambda = Expression.Lambda<Func<TEntity, bool>>(equal, item);
 
-			return dbSet.AsNoTracking().SingleOrDefault(lambda);
+			return await dbSet.AsNoTracking().SingleOrDefaultAsync(lambda);
 		}
 
-		public void Add(TEntity entity)
+		public async Task AddAsync(TEntity entity)
 		{
 			context.Add(entity);
-			context.SaveChanges();
+			await context.SaveChangesAsync();
 		}
 
-		public void Update(TEntity entity)
+		public async Task UpdateAsync(TEntity entity)
 		{
 			context.Update(entity);
-			context.SaveChanges();
+			await context.SaveChangesAsync();
 		}
 
-		public void DeleteById<TKey>(TKey id)
+		public async Task DeleteByIdAsync<TKey>(TKey id)
 		{
-			var entity = dbSet.Find(id);
+			var entity = await dbSet.FindAsync(id);
 			if (entity != null)
 			{
 				dbSet.Remove(entity);
-				context.SaveChanges();
+				await context.SaveChangesAsync();
 			}
 		}
 
