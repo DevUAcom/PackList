@@ -9,11 +9,14 @@
 	function AddItemComponentController() {
 		var vm = this;
 		
-
 		vm.addItem = addItem;
+		vm.$onInit = onInit;
+		
+		function onInit() {
+		}
 
-		function addItem(itemName) {
-			vm.onAdd({ item: { name: itemName } });
+		function addItem(itemName, itemCategory) {
+			vm.onAdd({ item: { name: itemName, categoryId: itemCategory.categoryId } });
 			vm.name = '';
 	  }
 	}

@@ -1,6 +1,6 @@
 ﻿<div class="row">
     <div class="col-md-4">
-        <pl-add-item on-add="$ctrl.onAdd({item: item})"></pl-add-item>
+        <pl-add-item on-add="$ctrl.onAdd({item: item})" categories="$ctrl.categories"></pl-add-item>
     </div>
 </div>
 
@@ -26,7 +26,7 @@
                         <td class="col-xs-5">{{ $ctrl.getCategoryNameById(item.categoryId) }}</td>
                         <td class="col-xs-1">
                             <p data-placement="top" data-toggle="tooltip" title="Edit">
-                                <button class="btn btn-primary btn-xs" ng-click="$ctrl.onEdit({ item: item })">
+                                <button class="btn btn-primary btn-xs" ng-click="$ctrl.onEdit({ item: item, categories: $ctrl.categories })">
                                     <span class="glyphicon glyphicon-pencil"></span>
                                 </button>
                             </p>

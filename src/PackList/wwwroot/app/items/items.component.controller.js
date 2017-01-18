@@ -9,18 +9,17 @@
 	function ItemsComponentController(CategoriesService) {
 		var vm = this;
 		vm.getCategoryNameById = getCategoryNameById;
+		vm.categories = [];
 		vm.$onInit = $onInit;
-
-		var categories = [];
 
 		function $onInit() {
 			CategoriesService.getCategories().then(function (data) {
-				categories = data;
+				vm.categories = data;
 			});
 		}
 
 		function getCategoryNameById(categoryId) {
-			var category = categories.find(function (category) {
+			var category = vm.categories.find(function (category) {
 				return category.categoryId === categoryId;
 			});
 			return category ? category.name : '';

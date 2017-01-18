@@ -1,4 +1,4 @@
-﻿describe('AddItemComponentController' , function () {
+﻿describe('AddItemComponentController', function () {
 	var AddItemComponentController;
 
 	beforeEach(function () {
@@ -11,9 +11,10 @@
 		AddItemComponentController = $componentController('plAddItem', null, { onAdd: onAddSpy });
 
 		var newItem = 'new item';
-		AddItemComponentController.addItem(newItem);
+		var itemCategory = { categoryId: 1 };
+		AddItemComponentController.addItem(newItem, itemCategory);
 
-		expect(onAddSpy).toHaveBeenCalledWith({item: {name: newItem} });
+		expect(onAddSpy).toHaveBeenCalledWith({ item: { name: newItem, categoryId: itemCategory.categoryId } });
 	});
 
 	it('should clear model when call addItem', function () {
@@ -21,7 +22,7 @@
 		AddItemComponentController = $componentController('plAddItem', null, { onAdd: onAddSpy });
 
 		AddItemComponentController.name = 'new item';
-		AddItemComponentController.addItem();
+		AddItemComponentController.addItem('item name', { categoryId: 1 });
 
 		expect(AddItemComponentController.name).toEqual('');
 	});

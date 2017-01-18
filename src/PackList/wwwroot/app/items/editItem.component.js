@@ -8,7 +8,7 @@
         	templateUrl: 'app/items/editItem.component.template.html',
         	controller: 'EditItemComponentController',
         	bindings: {
-				resolve: '<',
+        		resolve: '<',
 				close: '&',
 				dismiss: '&'
 			}

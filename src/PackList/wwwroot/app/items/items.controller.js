@@ -29,19 +29,22 @@
 				.then(removeItemFromList(item));
 		}
 
-		function editItem(item) {
+		function editItem(item, categories) {
 			var modalInstance = $uibModal.open({
 				component: 'plEditItem',
 				resolve: {
 					item: function () {
 						return item;
+					},
+					categories: function () {
+						return categories;
 					}
 				}
 			});
 
 			modalInstance.result.then(function (editedItem) {
 				item.name = editedItem.name;
-				item.category = editedItem.category;
+				item.categoryId = editedItem.categoryId;
 
 				saveItem(item);
 			}, function () {

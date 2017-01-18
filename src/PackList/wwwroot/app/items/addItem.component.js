@@ -7,6 +7,7 @@
         	templateUrl: 'app/items/addItem.component.template.html',
         	controller: 'AddItemComponentController',
         	bindings: {
+				categories: '<',
 				onAdd: '&'
 			}
       });

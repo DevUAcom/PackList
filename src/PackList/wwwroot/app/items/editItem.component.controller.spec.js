@@ -7,7 +7,7 @@
 	});
 
 	it('should copy vm.resolve.item when calling $onInit', function () {
-		var item = { itemId: 1, itemName: 'Item' };
+		var item = { itemId: 1, itemName: 'Item', categoryId: 1 };
 		EditItemComponentController = $componentController('plEditItem', null, { resolve: { item: item } });
 		EditItemComponentController.$onInit();
 
@@ -16,7 +16,7 @@
 	});
 
 	it('should call close binding when saving item', function () {
-		var item = { itemId: 1, itemName: 'Item' };
+		var item = { itemId: 1, itemName: 'Item', categoryId: 1 };
 		var closeSpy = jasmine.createSpy('close');
 
 		EditItemComponentController = $componentController('plEditItem', null, { close: closeSpy, resolve: { item: item } });
