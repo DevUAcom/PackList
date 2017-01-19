@@ -31,10 +31,17 @@ namespace PackList.Data
 
 			// Luggage
 			builder.AddConfiguration(new LuggageConfiguration());
+
+			// LuggageBag
+			builder.AddConfiguration(new LuggageBagConfiguration());
+
+			// LuggageBagItem
+			builder.AddConfiguration(new LuggageBagItemConfiguration());
 		}
 
 		public DbSet<Item> Items { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Luggage> Luggage { get; set; }
-    }
+		public DbSet<Bag> Bags { get; set; }
+	}
 }
