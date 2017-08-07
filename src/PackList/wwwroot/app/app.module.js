@@ -8,6 +8,7 @@
 		'ui.bootstrap',
 
         // Custom modules 
+		'bags', 
 		'utility'
 
         // 3rd Party Modules

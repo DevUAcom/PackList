@@ -10,6 +10,27 @@
 
 		$stateProvider
 			.state('home', { url: '/', template: '<h1>Dashboard</h1>' })
+
+			// Items
+			.state('items', {
+				url: '/items',
+				templateUrl: 'app/items/items.template.html',
+				controller: 'ItemsController as itemsCtrl',
+				resolve: {
+					itemsList: [
+					  'ItemsService', function (ItemsService) {
+					  	return ItemsService.getItems();
+					  }
+					]
+				}
+			})
+
+			// Bags
+			.state('bags', {
+				url: '/bags',
+				template: '<pl-bags></pl-bags>'
+			})
+
 			// Luggage
 			.state('luggage',
 			  {
@@ -24,19 +45,7 @@
 		  			]
 		  		}
 			  })
-			// Items
-			.state('items', {
-				url: '/items',
-				templateUrl: 'app/items/items.template.html',
-				controller: 'ItemsController as itemsCtrl',
-				resolve: {
-					itemsList: [
-					  'ItemsService', function (ItemsService) {
-				  		return ItemsService.getItems();
-					  }
-					]
-				}
-			});
+		;
 	}
 
 })();

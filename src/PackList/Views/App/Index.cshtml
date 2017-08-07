@@ -27,6 +27,7 @@
             <ul class="nav nav-pills nav-stacked">
                 <li role="presentation" ui-sref-active="active"><a ui-sref="home">Dashboard</a></li>
                 <li role="presentation" ui-sref-active="active"><a ui-sref="items">Items</a></li>
+                <li role="presentation" ui-sref-active="active"><a ui-sref="bags">Bags</a></li>
                 <li role="presentation" ui-sref-active="active"><a ui-sref="luggage">Luggage</a></li>
             </ul>
         </div>
@@ -41,14 +42,16 @@
         <script src="~/lib/angular-bootstrap/ui-bootstrap-tpls.js"></script>
 
         <script src="~/app/app.module.js"></script>
+        <script src="~/app/bags/bags.module.js"></script>
         <script src="~/app/constants.js"></script>
         <script src="~/app/routes.js"></script>
 
         <script src="~/app/utility/utility.module.js"></script>
         <script src="~/app/utility/setFocus.js"></script>
 
-        <script asp-src-include="~/app/luggage/*.js" asp-src-exclude="~/app/luggage/*.spec.js"></script>
         <script asp-src-include="~/app/items/*.js" asp-src-exclude="~/app/items/*.spec.js"></script>
+        <script asp-src-include="~/app/bags/*.js" asp-src-exclude="~/app/bags/*.spec.js, ~/app/bags/bags.module.js"></script>
+        <script asp-src-include="~/app/luggage/*.js" asp-src-exclude="~/app/luggage/*.spec.js"></script>
         <script asp-src-include="~/app/categories/*.js" asp-src-exclude="~/app/categories/*.spec.js"></script>
 
 
